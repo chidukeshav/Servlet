@@ -1,6 +1,7 @@
 package com.jsp;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 
 import jakarta.servlet.GenericServlet;
 import jakarta.servlet.ServletException;
@@ -14,6 +15,18 @@ public class Text extends GenericServlet {
 	public void service(ServletRequest req, ServletResponse res) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		System.out.println("hello");
+		String name=req.getParameter("name");
+		int age=Integer.parseInt(req.getParameter("age"));
+		int mobile =Integer.parseInt(req.getParameter("contact"));
+		
+		
+		PrintWriter writer = res.getWriter();
+		writer.print("<html><body>");
+		writer.print("<h1> Name:"+name+"</h1>");
+		writer.print("<h1> Age:"+age+"</h1>");
+		writer.print("<h1> Mobile:"+mobile+"</h1>");
+		writer.print("</html></body>");
+		
 		
 	}
 
